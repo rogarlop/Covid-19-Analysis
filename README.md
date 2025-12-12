@@ -5,13 +5,13 @@ The project includes historical data from pandemic beginnings, from January to J
 
 The centinel model used for integrating the data was a process performed thanks to 'Secretaría de Salud'. The selected hospitals were because it was determined they are representative of all mexican population. The distribution of those units can be appreciated in the next image. For more details, refer to the [oficial page](https://www.gob.mx/salud/documentos/informacion-internacional-y-nacional-sobre-nuevo-coronavirus-2019-ncov). In the data, the attribute 'RESULTADO' with value 1, means a positive PCR and 2 a negative one. The data do not contain sensitive information, and it is free to the public to use.
 
-<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/c22c956f-5798-4f8a-b552-6a656fcdd983" />
+<p align="center"><img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/c22c956f-5798-4f8a-b552-6a656fcdd983" /></p>
 
 ## Database Preprocessing
 We performed a recodification to the flags defined in the original database. We detected null or inconsistent data, and eliminated them, achieving total cases of 260372. We also coded a variable for the death people, from the death date given, that was the only reference to someone's death. Age groups were also defined to mantain some groups of interest. The ranges for the groups were 0-15 (children), 15-25 (youths), 25-50 (adults), middle-aged (50-65) and elder (65+). New features were also added (quantity of previous illness and quantity of risk factors) during the analysis. Risk factors comprehended pregnancy, immunosuppressed and smoker.
 
 There existed a huge proportion in the original database between the death and survived ones. The survivors were around the 98% of the total database. As we also intended to develop a classification model (this would be understood later), we explored both subsampling (Near Miss technique) and oversampling (SMOTE technique). The following image shows the distributions of the age feature with Near Miss and SMOTE applied. With near miss, we subsampled the survivors class from 255,962 to 22050 samples (approx, 8.6%), and with SMOTE we performed oversampling of the minority class from 4410 to achieve 17640 samples (approx. the 400%). To determine if the sampling techniques were able to retain unaltered the data distribution, we analyzed the age distributions in both methods and compared statistical values and measurements. The next table illustrates those results, showing that the distributions remain unchanged. 
 
-<img width="450" height="600" alt="image" src="https://github.com/user-attachments/assets/7f3150ed-204c-4bc3-b11d-0403bcc65db7" />
+<p align="center"><img width="450" height="600" alt="image" src="https://github.com/user-attachments/assets/7f3150ed-204c-4bc3-b11d-0403bcc65db7" /></p>
 
 
